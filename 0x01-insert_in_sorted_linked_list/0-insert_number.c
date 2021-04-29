@@ -3,7 +3,7 @@
 /**
  * insert_node - inserts a number into a sorted singly linked list
  * @head: pointer to firtst node.
- * @n: given int to be added.
+ * @number: given int to be added.
  * Return: the address of the new element, or NULL if it failed.
  */
 listint_t *insert_node(listint_t **head, int number)
@@ -22,9 +22,9 @@ listint_t *insert_node(listint_t **head, int number)
 	else
 	{
 		cursor = *head;
-		while (cursor->next != NULL && cursor->next->n <= number )
+		while (cursor->next != NULL && cursor->next->n <= number)
 			cursor = cursor->next;
-        new->next = cursor->next;
+		new->next = cursor->next;
 		cursor->next = new;
 	}
 	return (new);
