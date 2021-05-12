@@ -7,6 +7,9 @@ def minOperations(n):
     input n: int
     Returns an integer
     """
+    if not isinstance(n, int):
+        return 0
+
     res = 0
 
     for i in range(2, n):
