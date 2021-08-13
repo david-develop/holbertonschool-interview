@@ -28,10 +28,10 @@ request(urlApi, function (error, response, body) {
     (async function () {
       const options = {
         url: charUrl[i],
-        method: 'GET',
+        method: 'GET'
       };
 
-      let response = await promisifiedRequest(options);
+      const response = await promisifiedRequest(options);
 
       console.log(JSON.parse(response.body).name);
     })();
