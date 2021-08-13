@@ -23,9 +23,8 @@ request(urlApi, function (error, response, body) {
   }
   const jsonRes = JSON.parse(body);
   const charUrl = jsonRes.characters;
-
-  for (let i = 0; i < charUrl.length; i++) {
-    (async function () {
+  (async function () {
+    for (let i = 0; i < charUrl.length; i++) {
       const options = {
         url: charUrl[i],
         method: 'GET'
@@ -34,6 +33,6 @@ request(urlApi, function (error, response, body) {
       const response = await promisifiedRequest(options);
 
       console.log(JSON.parse(response.body).name);
-    })();
-  }
+    }
+  })();
 });
