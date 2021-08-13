@@ -11,7 +11,7 @@ request(urlApi, function (error, response, body) {
   const jsonRes = JSON.parse(body);
   const charUrl = jsonRes.characters;
   for (let i = 0; i < charUrl.length; i++) {
-    request(charUrl[i], function (error, response, body) {
+    await request(charUrl[i], function (error, response, body) {
       if (error) {
         console.error(error); // Print the error if one occurred
       }
