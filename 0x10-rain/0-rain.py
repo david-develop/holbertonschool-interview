@@ -9,7 +9,7 @@ def rain(walls):
     f = 0
     s = 0
     water = 0
-    if not walls:
+    if not walls or not isinstance(walls, list):
         return 0
     len_wall = len(walls)
     while s < len_wall - 1 and f < len_wall:
