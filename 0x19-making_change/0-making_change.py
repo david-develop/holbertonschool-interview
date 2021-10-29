@@ -14,19 +14,21 @@ def makeChange(coins, total):
         return -1
     if len(coins) == 0:
         return -1
-    if len(coins) == 1:
-        if total in coins:
-            return 1
-        else:
-            return -1
+    if len(coins) == 1 and total in coins:
+        return 1
 
     sorted_coins = sorted(coins, reverse=True)
-    # print(sorted_coins)
-    # while total >= 0:
-    #     for coin in sorted_coins:
-    #         if total - coin >= 0:
-    #             total -= coin
-    #             return 1 + makeChange(coins, total)
-    # return -1
+    while total >= 0:
 
+        for coin in sorted_coins:
+            if coin > total:
+                sorted_coins.pop(0)
 
+                return makeChange(sorted_coins, total)
+            if total - coin >= 0:
+                total -= coin
+
+                if coin > total:
+                    sorted_coins.pop(0)
+                return 1 + makeChange(sorted_coins, total)
+    return -1
