@@ -22,4 +22,3 @@ def makeChange(coins, total):
             if denom <= amount:
                 nums[amount] = min(nums[amount], 1 + nums[amount - denom])
     return nums[total] if nums[total] != float('inf') else -1
-
