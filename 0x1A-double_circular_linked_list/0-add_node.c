@@ -1,5 +1,5 @@
 #include "list.h"
-
+#include "stdlib.h"
 /**
  * add_node_end - Add a new node to the end of a double circular linked list.
  * @list: pointer to first node.
@@ -22,8 +22,7 @@ List *add_node_end(List **list, char *str)
 	if (*list == NULL)
 	{
 		*list = new;
-		new->prev = new;
-		new->next = new;
+		new->next = new->prev = new;
 	}
 	else
 	{
@@ -61,8 +60,7 @@ List *add_node_begin(List **list, char *str)
 	if (*list == NULL)
 	{
 		*list = new;
-		new->prev = new;
-		new->next = new;
+		new->next = new->prev = new;
 	}
 	else
 	{
